@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Transactions flowing through the system reach the smart contract environment after one of two contract call use-cases:
 
@@ -13,9 +15,14 @@ The sequence diagram below shows the verification workflow for rollup stacks and
 
 ![Polygon Solidity consensus verification flow](../../../../img/cdk/high-level-architecture/verification-flow.png)
 
-## `verifyBatchesTrustedAggregator(rollupID, pendingStateNum, initNumBatch, finalNewBatch, newLocalExitRoot, newStateRoot, beneficiary, proof)`
+## `verifyBatchesTrustedAggregator()`
 
-This function is called on the `PolygonRollupManager` contract.
+The `verifyBatchesTrustedAggregator()` function is called on the `PolygonRollupManager` contract:
+
+```
+verifyBatchesTrustedAggregator(rollupID, pendingStateNum, initNumBatch,
+ finalNewBatch, newLocalExitRoot, newStateRoot, beneficiary, proof)
+```
 
 The zkEVM node aggregator, or the AggLayer, calls the [`verifyBatchesTrustedAggregator`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/b2a62e6af5738366e7494e8312184b1d6fdf287c/contracts/v2/PolygonRollupManager.sol#L921) function on the [`PolygonRollupManager.sol`](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/etrog/contracts/v2/PolygonRollupManager.sol) contract.
 

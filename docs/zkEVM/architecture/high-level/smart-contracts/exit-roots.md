@@ -1,8 +1,4 @@
-The class diagram below describes how the exit root contracts communicate with the bridge and the rollup manager.
-
-![Polygon Solidity smart contract bridging architecture](../../../../img/cdk/high-level-architecture/exit-root-class-diagram.png)
-
-An exit tree is a binary, append-only, sparse Merkle tree (SMT) whose leaf nodes store bridging data. The exit trees have a depth of 32.
+An exit tree is a binary, append-only, sparse Merkle tree (SMT) with a maximum depth of 32, where leaf nodes store bridging data.
 
 The Merkle root of an exit tree is known as the exit tree root, and it is the fingerprint of all the information recorded in the exit tree's leaf nodes. 
 
@@ -75,7 +71,7 @@ uint8 private constant _LEAF_TYPE_ASSET = 0;
 uint8 private constant _LEAF_TYPE_MESSAGE = 1;
 ```
 
-Data in a leaf contains a Keccak256 hash of the metadata (ABI encoded metadata if any) and the following parameters (matched by publicly available transaction data as seen in the [bridge L1 to L2](bridging.md#l1-to-l2) documentation):
+Data in a leaf contains a Keccak256 hash of the metadata (ABI encoded metadata if any) and the following parameters (matched by publicly available transaction data as seen in the [bridge L1 to L2](../../unified-LxLy/bridging.md#l1-to-l2) documentation):
 
 ```solidity
 _addLeaf(

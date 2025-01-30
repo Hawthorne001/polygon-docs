@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 This document provides instructions on how to top up the Heimdall fee for a PoS validator. 
 
@@ -23,7 +25,7 @@ You can also do it manually by following the steps below. This requires basic Et
 5. Fill in the details:
 
     - `user`: Validator's Signer Address
-    - `heimdallFee`: Top-up fee (**minimum 1 MATIC**)
+    - `heimdallFee`: Top-up fee (**minimum 1 POL**)
 
 6. After filling in the details, select **Write** to sign the transaction.
 
